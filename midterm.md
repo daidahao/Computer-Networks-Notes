@@ -149,11 +149,20 @@ Hosts process all five layers.
 
 Place a passive receiver in the vicinity of the wireless transmitter, that receiver can obtain a copy of every packet that is transmitted.
 
+# Chapter 2 Application Layer
 
+## Section 2.1 Principles of Network Applications
 
+**R1. List five nonproprietary Internet applications and the application-layer protocols that they use.**
 
-
-
+Application  | Application-Layer Protocol  |  Underlying Transport Protocol
+--|---|--
+Electronic mail  | SMTP  | TCP
+Remote terminal access  |Telnet   |  TCP
+Web  | HTTP  |  TCP
+File transfer  | FTP  |  TCP
+Streaming multimedia  |  HTTP |  TCP
+Internet telephony  |  SIP, RTP, or proprietary (eg. Skype) |  UDP or TCP
 
 
 
