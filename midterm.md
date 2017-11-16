@@ -109,14 +109,45 @@ It do so to reduce its payments to upper-tier ISPs and to have greater control o
 
 ### Section 1.4 Dealy, Loss and Throughput in Packet-Switched Networks
 
+**R16. Consider sending a packet from a source host to a destination host over a fixed route. List the delay components in the end-to-end delay. Which of these delays are constant and which are variable?**
+
+$d_{nodal} = d_{proc} + d_{queue} + d_{trans} + d_{prop}$
+
+$d_{proc}$, $d_{trans}$, $d_{prop}$ is constant if the length of the packet is fixed.
+
+$d_{queue}$ is variable.
+
+**R20. Suppose end system A wants to send a large file to end system B. At a very high level, describe how end system A creates packets from the file. When one of these packets arrives to a packet switch, what information in the packet does the switch use to determine the link onto which the packet is forwarded? Why is packet switching in the Internet analogous to driving from one city to another and asking directions along the way?**
+
+End system A **breaks** the large file into chunks. It **adds header** to each chunk, thereby **generating multiple packets** from the file. The header (**Network Layer**) in each packet includes the IP address of the destination (end system B).
+
+The packet switch uses the **destination IP address** in the packet to determine the outgoing link.
+
+Asking which road to take is analogous to a packet asking which outgoing link it should be forwarded on, given the packet’s destination address.
+
+### Section 1.5 Protocol Layers and Their Service Models
+
+**R22. If two end-systems are connected through multiple routers and the data-link level between them ensures reliable data delivery, is a transport protocol offering reliable data delivery between these two end-systems necessary? Why?**
+
+???
+
+**R25. Which layers in the Internet protocol stack does a router process? Which layers does a link-layer switch process? Which layers does a host process?**
+
+Routers process network, link and physical layers.
+
+> This is a little bit of a white lie, as modern routers sometimes act as firewalls or caching
+components, and process Transport layer as well.
+
+Link layer switches process link and physical layers (layers 1 through2).
+
+Hosts process all five layers.
 
 
+### Section 1.6 Networks Under Attack
 
+**R26. If you want to spy on what websites your classmates are visiting with their laptops thourgh the university's WiFi network, what could you do?**
 
-
-
-
-
+Place a passive receiver in the vicinity of the wireless transmitter, that receiver can obtain a copy of every packet that is transmitted.
 
 
 
