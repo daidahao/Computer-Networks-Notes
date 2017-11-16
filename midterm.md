@@ -1,8 +1,8 @@
 # Computer Networks Midterm Review
 
-## Chapter 1 Computer Networks and the Internet
+# Chapter 1 Computer Networks and the Internet
 
-### Section 1.1 What is the Internet?
+## Section 1.1 What is the Internet?
 
 **R1. What is the difference between a host and an end system? List several different types of end systems. Is a Web server an end system?**
 
@@ -16,7 +16,7 @@ A Web server is an end system.
 
 Standards are important for protocols so that people can create networking systems and products that interoperate.
 
-### Section 1.2 The Network Edge
+## Section 1.2 The Network Edge
 
 **List six access technologies. Classify each one as home access, enterprise access, or wide-area wireless access.**
 
@@ -78,7 +78,7 @@ Up to gigabits per second (potentially).
 
 Bandwidth is not shared. (???)
 
-### Section 1.3 The Network Core
+## Section 1.3 The Network Core
 
 **R12. What advantage does a circuit-switched network have over a packet-switched network? What advantages does TDM have over FDM in a circuit-switched network?**
 
@@ -107,7 +107,7 @@ A content provider connect to lower-tier ISPs, either by directly connection or 
 
 It do so to reduce its payments to upper-tier ISPs and to have greater control of how its services are ultimately delivered to end users.
 
-### Section 1.4 Dealy, Loss and Throughput in Packet-Switched Networks
+## Section 1.4 Dealy, Loss and Throughput in Packet-Switched Networks
 
 **R16. Consider sending a packet from a source host to a destination host over a fixed route. List the delay components in the end-to-end delay. Which of these delays are constant and which are variable?**
 
@@ -125,7 +125,7 @@ The packet switch uses the **destination IP address** in the packet to determine
 
 Asking which road to take is analogous to a packet asking which outgoing link it should be forwarded on, given the packet’s destination address.
 
-### Section 1.5 Protocol Layers and Their Service Models
+## Section 1.5 Protocol Layers and Their Service Models
 
 **R22. If two end-systems are connected through multiple routers and the data-link level between them ensures reliable data delivery, is a transport protocol offering reliable data delivery between these two end-systems necessary? Why?**
 
@@ -143,7 +143,7 @@ Link layer switches process link and physical layers (layers 1 through2).
 Hosts process all five layers.
 
 
-### Section 1.6 Networks Under Attack
+## Section 1.6 Networks Under Attack
 
 **R26. If you want to spy on what websites your classmates are visiting with their laptops thourgh the university's WiFi network, what could you do?**
 
