@@ -199,7 +199,7 @@ SMTP uses handshaking at the application layer whereas HTTP does not.
 **R11. What does a stateless protocol mean? Is IMAP stateless? What about SMTP?**
 
 ???
-A stateless protocol maintains no information about the clients. IMAP is stateful. SMTP is stateless.
+A stateless protocol maintains no information about the clients. IMAP is stateful. SMTP and POP3 are stateless.
 
 **R12. How can websites keep track of users? Do they always need to use cookies?**
 
@@ -211,7 +211,7 @@ By using cookies. Cookie technology has four components,
 - A back-end database at the Web site
 
 ???
-No, since they can also use information like user accounts, IP addresses, etc.
+Yes.
 
 **R13. Will Web caching reduce the delay for all objects requested by a user or for only some of the objects? Why?**
 
@@ -269,13 +269,93 @@ If the TCP server is not running, then the client will fail to make a connection
 
 For the UDP application, the client does not initiate connections (or attempt to communicate with the UDP server) immediately upon execution.
 
+# Chapter 3 Transport Layer
 
+## Section 3.1 - 3.3 Introduction, Multiplexing and Demultiplexing, UDP
 
+User Datagram Protocol
 
+**R3. How is a UDP socket fully identified? What about a TCP socket? What is the difference between the full identification of both sockets?**
 
+UDP: (destination IP address, destination port number)
 
+TCP: (source IP address, source port number, destination IP address, destination port number)
 
+**R4. Describe why an application developer might choose to run an application over UDP rather than TCP.**
 
+- Avoid congestion control
+- Do not need reliable data transfer
+
+**R5. Why is it that voice and video traffic is often sent over TCP rather than UDP in today’s Internet? (Hint: The answer we are looking for has nothing to do with TCP’s congestion-control mechanism.)**
+
+Since **most firewalls** are configured to block UDP traffic, using TCP for video and voice traffic lets the traffic though the firewalls.
+
+**R6. Is it possible for an application to enjoy reliable data transfer even when the application runs over UDP? If so, how?**
+
+Yes. The application developer can put reliable data transfer into the application layer protocol. This would require a significant amount of work and debugging, however.
+
+**R7. Suppose a process in Host C has a UDP socket with port number 6789. Sup- pose both Host A and Host B each send a UDP segment to Host C with destination port number 6789. Will both of these segments be directed to the same socket at Host C? If so, how will the process at Host C know that these two segments originated from two different hosts?**
+
+Yes, both segments will be directed to the same socket.
+
+For each received segment, at the socket interface, the operating system will provide the process with the **IP addresses** to determine the origins of the individual segments.
+
+**R8. Suppose that a Web server runs in Host C on port 80. Suppose this Web server uses persistent connections, and is currently receiving requests from two different Hosts, A and B. Are all of the requests being sent through the same socket at Host C? If they are being passed through different sockets, do both of the sockets have port 80? Discuss and explain.**
+
+For each persistent connection, the Web server creates a separate “connection socket”.
+
+When host C receives and IP datagram, it examines these four fields in the datagram/segment to determine to which socket it should pass the payload of the TCP segment. Thus, the requests from A and B pass through different sockets.
+
+The identifier for both of these sockets has 80 for the destination port; however, the identifiers for these sockets have different values for source IP addresses.
+
+## Section 3.4 Principles of Reliable Data Transfer
+
+**R9. In our $rdt$ protocols, why did we need to introduce sequence numbers?**
+
+Sequence numbers are required for a receiver to find out whether an arriving packet contains **new data or is a retransmission**.
+
+**R10. In our $rdt$ protocols, why did we need to introduce timers?**
+
+To **handle losses** in the channel.
+
+If the ACK for a transmitted packet is not received within the duration of the timer for the packet, the packet (or its ACK or NACK) is assumed to have been lost. Hence, the packet is retransmitted.
+
+**R11. Suppose that the roundtrip delay between sender and receiver is constant and known to the sender. Would a timer still be necessary in protocol rdt 3.0, assuming that packets can be lost? Explain.**
+
+To **detect the loss**, for each packet, a timer of constant duration will still be necessary at the sender.
+
+## Section 3.6 TCP
+
+Transmission Control Protocol
+
+**R16. Consider the Telnet example discussed in Section 3.5. A few seconds after the user types the letter ‘C,’ the user types the letter ‘R.’ After typing the letter ‘R,’ how many segments are sent, and what is put in the sequence number and acknowledgment fields of the segments?**
+
+3 segments.
+
+- First segment: seq = 43, ack =80;
+- Second segment: seq = 80, ack = 44;
+- Third segment; seq = 44, ack = 81
+
+## To do list
+
+Format
+
+- HTTP
+- SMTP
+- DNS
+- TCP
+- UDP
+
+Procedure
+
+- rdt 1.0 - 3.0
+- Socket Programming
+- GBN
+- SR
+
+Concepts Review
+
+Slides
 
 
 
