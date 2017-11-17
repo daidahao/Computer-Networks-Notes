@@ -1,5 +1,8 @@
 # Computer Networks Midterm Review
 
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js">
+</script>
+
 # Chapter 1 Computer Networks and the Internet
 
 ## Section 1.1 What is the Internet?
