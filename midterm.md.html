@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <title>midterm</title>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    jax: ["input/TeX","output/HTML-CSS"],
+    extensions: [],
+    TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+    },
+    showMathMenu: false
+  });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js">
+</script>
+      <style>.markdown-preview:not([data-use-github-style]) { padding: 2em; font-size: 1.2em; color: rgb(96, 125, 139); background-color: rgb(250, 250, 250); overflow: auto; }
+.markdown-preview:not([data-use-github-style]) > :first-child { margin-top: 0px; }
+.markdown-preview:not([data-use-github-style]) h1, .markdown-preview:not([data-use-github-style]) h2, .markdown-preview:not([data-use-github-style]) h3, .markdown-preview:not([data-use-github-style]) h4, .markdown-preview:not([data-use-github-style]) h5, .markdown-preview:not([data-use-github-style]) h6 { line-height: 1.2; margin-top: 1.5em; margin-bottom: 0.5em; color: rgb(29, 38, 42); }
+.markdown-preview:not([data-use-github-style]) h1 { font-size: 2.4em; font-weight: 300; }
+.markdown-preview:not([data-use-github-style]) h2 { font-size: 1.8em; font-weight: 400; }
+.markdown-preview:not([data-use-github-style]) h3 { font-size: 1.5em; font-weight: 500; }
+.markdown-preview:not([data-use-github-style]) h4 { font-size: 1.2em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h5 { font-size: 1.1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h6 { font-size: 1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) strong { color: rgb(29, 38, 42); }
+.markdown-preview:not([data-use-github-style]) del { color: rgb(141, 164, 176); }
+.markdown-preview:not([data-use-github-style]) a, .markdown-preview:not([data-use-github-style]) a code { color: rgb(0, 150, 136); }
+.markdown-preview:not([data-use-github-style]) img { max-width: 100%; }
+.markdown-preview:not([data-use-github-style]) > p { margin-top: 0px; margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) > ul, .markdown-preview:not([data-use-github-style]) > ol { margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) blockquote { margin: 1.5em 0px; font-size: inherit; color: rgb(141, 164, 176); border-color: rgb(209, 209, 209); border-width: 4px; }
+.markdown-preview:not([data-use-github-style]) hr { margin: 3em 0px; border-top: 2px dashed rgb(209, 209, 209); background: none; }
+.markdown-preview:not([data-use-github-style]) table { margin: 1.5em 0px; }
+.markdown-preview:not([data-use-github-style]) th { color: rgb(29, 38, 42); }
+.markdown-preview:not([data-use-github-style]) th, .markdown-preview:not([data-use-github-style]) td { padding: 0.66em 1em; border: 1px solid rgb(209, 209, 209); }
+.markdown-preview:not([data-use-github-style]) pre, .markdown-preview:not([data-use-github-style]) code { color: rgb(29, 38, 42); background-color: rgb(235, 235, 235); }
+.markdown-preview:not([data-use-github-style]) pre, .markdown-preview:not([data-use-github-style]) pre.editor-colors { margin: 1.5em 0px; padding: 1em; font-size: 0.92em; border-radius: 3px; background-color: rgb(240, 240, 240); }
+.markdown-preview:not([data-use-github-style]) kbd { color: rgb(29, 38, 42); border-width: 1px 1px 2px; border-style: solid; border-color: rgb(209, 209, 209) rgb(209, 209, 209) rgb(194, 194, 194); border-image: initial; background-color: rgb(235, 235, 235); }
+.markdown-preview[data-use-github-style] { font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif; line-height: 1.6; word-wrap: break-word; padding: 30px; font-size: 16px; color: rgb(51, 51, 51); background-color: rgb(255, 255, 255); overflow: scroll; }
+.markdown-preview[data-use-github-style] > :first-child { margin-top: 0px !important; }
+.markdown-preview[data-use-github-style] > :last-child { margin-bottom: 0px !important; }
+.markdown-preview[data-use-github-style] a:not([href]) { color: inherit; text-decoration: none; }
+.markdown-preview[data-use-github-style] .absent { color: rgb(204, 0, 0); }
+.markdown-preview[data-use-github-style] .anchor { position: absolute; top: 0px; left: 0px; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; }
+.markdown-preview[data-use-github-style] .anchor:focus { outline: none; }
+.markdown-preview[data-use-github-style] h1, .markdown-preview[data-use-github-style] h2, .markdown-preview[data-use-github-style] h3, .markdown-preview[data-use-github-style] h4, .markdown-preview[data-use-github-style] h5, .markdown-preview[data-use-github-style] h6 { position: relative; margin-top: 1em; margin-bottom: 16px; font-weight: bold; line-height: 1.4; }
+.markdown-preview[data-use-github-style] h1 .octicon-link, .markdown-preview[data-use-github-style] h2 .octicon-link, .markdown-preview[data-use-github-style] h3 .octicon-link, .markdown-preview[data-use-github-style] h4 .octicon-link, .markdown-preview[data-use-github-style] h5 .octicon-link, .markdown-preview[data-use-github-style] h6 .octicon-link { display: none; color: rgb(0, 0, 0); vertical-align: middle; }
+.markdown-preview[data-use-github-style] h1:hover .anchor, .markdown-preview[data-use-github-style] h2:hover .anchor, .markdown-preview[data-use-github-style] h3:hover .anchor, .markdown-preview[data-use-github-style] h4:hover .anchor, .markdown-preview[data-use-github-style] h5:hover .anchor, .markdown-preview[data-use-github-style] h6:hover .anchor { padding-left: 8px; margin-left: -30px; text-decoration: none; }
+.markdown-preview[data-use-github-style] h1:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h2:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h3:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h4:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h5:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h6:hover .anchor .octicon-link { display: inline-block; }
+.markdown-preview[data-use-github-style] h1 tt, .markdown-preview[data-use-github-style] h2 tt, .markdown-preview[data-use-github-style] h3 tt, .markdown-preview[data-use-github-style] h4 tt, .markdown-preview[data-use-github-style] h5 tt, .markdown-preview[data-use-github-style] h6 tt, .markdown-preview[data-use-github-style] h1 code, .markdown-preview[data-use-github-style] h2 code, .markdown-preview[data-use-github-style] h3 code, .markdown-preview[data-use-github-style] h4 code, .markdown-preview[data-use-github-style] h5 code, .markdown-preview[data-use-github-style] h6 code { font-size: inherit; }
+.markdown-preview[data-use-github-style] h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h1 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h2 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h3 { font-size: 1.5em; line-height: 1.43; }
+.markdown-preview[data-use-github-style] h3 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h4 { font-size: 1.25em; }
+.markdown-preview[data-use-github-style] h4 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h5 { font-size: 1em; }
+.markdown-preview[data-use-github-style] h5 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] h6 { font-size: 1em; color: rgb(119, 119, 119); }
+.markdown-preview[data-use-github-style] h6 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] p, .markdown-preview[data-use-github-style] blockquote, .markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol, .markdown-preview[data-use-github-style] dl, .markdown-preview[data-use-github-style] table, .markdown-preview[data-use-github-style] pre { margin-top: 0px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] hr { height: 4px; padding: 0px; margin: 16px 0px; background-color: rgb(231, 231, 231); border: 0px none; }
+.markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol { padding-left: 2em; }
+.markdown-preview[data-use-github-style] ul.no-list, .markdown-preview[data-use-github-style] ol.no-list { padding: 0px; list-style-type: none; }
+.markdown-preview[data-use-github-style] ul ul, .markdown-preview[data-use-github-style] ul ol, .markdown-preview[data-use-github-style] ol ol, .markdown-preview[data-use-github-style] ol ul { margin-top: 0px; margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] li > p { margin-top: 16px; }
+.markdown-preview[data-use-github-style] dl { padding: 0px; }
+.markdown-preview[data-use-github-style] dl dt { padding: 0px; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; }
+.markdown-preview[data-use-github-style] dl dd { padding: 0px 16px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] blockquote { padding: 0px 15px; color: rgb(119, 119, 119); border-left: 4px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] blockquote > :first-child { margin-top: 0px; }
+.markdown-preview[data-use-github-style] blockquote > :last-child { margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] table { display: block; width: 100%; overflow: auto; word-break: keep-all; }
+.markdown-preview[data-use-github-style] table th { font-weight: bold; }
+.markdown-preview[data-use-github-style] table th, .markdown-preview[data-use-github-style] table td { padding: 6px 13px; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] table tr { background-color: rgb(255, 255, 255); border-top: 1px solid rgb(204, 204, 204); }
+.markdown-preview[data-use-github-style] table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+.markdown-preview[data-use-github-style] img { max-width: 100%; box-sizing: border-box; }
+.markdown-preview[data-use-github-style] .emoji { max-width: none; }
+.markdown-preview[data-use-github-style] span.frame { display: block; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.frame > span { display: block; float: left; width: auto; padding: 7px; margin: 13px 0px 0px; overflow: hidden; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] span.frame span img { display: block; float: left; }
+.markdown-preview[data-use-github-style] span.frame span span { display: block; padding: 5px 0px 0px; clear: both; color: rgb(51, 51, 51); }
+.markdown-preview[data-use-github-style] span.align-center { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-center > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-center span img { margin: 0px auto; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-right { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-right > span { display: block; margin: 13px 0px 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] span.align-right span img { margin: 0px; text-align: right; }
+.markdown-preview[data-use-github-style] span.float-left { display: block; float: left; margin-right: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-left span { margin: 13px 0px 0px; }
+.markdown-preview[data-use-github-style] span.float-right { display: block; float: right; margin-left: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-right > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] code, .markdown-preview[data-use-github-style] tt { padding: 0.2em 0px; margin: 0px; font-size: 85%; background-color: rgba(0, 0, 0, 0.0392157); border-radius: 3px; }
+.markdown-preview[data-use-github-style] code::before, .markdown-preview[data-use-github-style] tt::before, .markdown-preview[data-use-github-style] code::after, .markdown-preview[data-use-github-style] tt::after { letter-spacing: -0.2em; content: " "; }
+.markdown-preview[data-use-github-style] code br, .markdown-preview[data-use-github-style] tt br { display: none; }
+.markdown-preview[data-use-github-style] del code { text-decoration: inherit; }
+.markdown-preview[data-use-github-style] pre > code { padding: 0px; margin: 0px; font-size: 100%; word-break: normal; white-space: pre; background: transparent; border: 0px; }
+.markdown-preview[data-use-github-style] .highlight { margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] .highlight pre, .markdown-preview[data-use-github-style] pre { padding: 16px; overflow: auto; font-size: 85%; line-height: 1.45; background-color: rgb(247, 247, 247); border-radius: 3px; }
+.markdown-preview[data-use-github-style] .highlight pre { margin-bottom: 0px; word-break: normal; }
+.markdown-preview[data-use-github-style] pre { word-wrap: normal; }
+.markdown-preview[data-use-github-style] pre code, .markdown-preview[data-use-github-style] pre tt { display: inline; max-width: initial; padding: 0px; margin: 0px; overflow: initial; line-height: inherit; word-wrap: normal; background-color: transparent; border: 0px; }
+.markdown-preview[data-use-github-style] pre code::before, .markdown-preview[data-use-github-style] pre tt::before, .markdown-preview[data-use-github-style] pre code::after, .markdown-preview[data-use-github-style] pre tt::after { content: normal; }
+.markdown-preview[data-use-github-style] kbd { display: inline-block; padding: 3px 5px; font-size: 11px; line-height: 10px; color: rgb(85, 85, 85); vertical-align: middle; background-color: rgb(252, 252, 252); border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(187, 187, 187); border-image: initial; border-radius: 3px; box-shadow: rgb(187, 187, 187) 0px -1px 0px inset; }
+.markdown-preview[data-use-github-style] a { color: rgb(51, 122, 183); }
+.markdown-preview[data-use-github-style] pre, .markdown-preview[data-use-github-style] code { color: inherit; }
+.markdown-preview[data-use-github-style] pre, .markdown-preview[data-use-github-style] pre.editor-colors { padding: 0.8em 1em; margin-bottom: 1em; font-size: 0.85em; border-radius: 4px; overflow: auto; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors .horizontal-scrollbar { visibility: hidden; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors:hover .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors:hover .horizontal-scrollbar { visibility: visible; }
+.markdown-preview del { text-decoration: none; position: relative; }
+.markdown-preview del::after { border-bottom: 1px solid black; content: ""; left: 0px; position: absolute; right: 0px; top: 50%; }
+.markdown-preview .flash { animation: flash 1s ease-out 1; outline: rgba(255, 0, 0, 0) solid 1px; }
+.markdown-preview .flash:not(li) { display: block; }
+.markdown-preview code { text-shadow: none; }
+.bracket-matcher .region {
+  border-bottom: 1px dotted lime;
+  position: absolute;
+}
+
+.spell-check-misspelling .region {
+  border-bottom: 2px dotted rgba(255, 51, 51, 0.75);
+}
+.spell-check-corrections {
+  width: 25em !important;
+}
+
+pre.editor-colors {
+  background-color: #FAFAFA;
+  color: #607D8B;
+}
+pre.editor-colors .gutter {
+  background-color: #FAFAFA;
+  color: #707A80;
+}
+pre.editor-colors .gutter .line-number.cursor-line {
+  background-color: #FAFAFA;
+  color: #6ec1b9;
+}
+pre.editor-colors .gutter .line-number.cursor-line-no-selection {
+  color: #6ec1b9;
+}
+pre.editor-colors .wrap-guide {
+  color: #ededed;
+}
+pre.editor-colors .indent-guide {
+  color: #ededed;
+}
+pre.editor-colors .invisible-character {
+  color: #e1e1e1;
+}
+pre.editor-colors .search-results .syntax--marker .region {
+  background-color: transparent;
+  border: #d5dee2;
+}
+pre.editor-colors .search-results .syntax--marker.current-result .region {
+  border: #b7c6cd;
+}
+pre.editor-colors.is-focused .cursor {
+  border-color: #009688;
+}
+pre.editor-colors.is-focused .selection .region {
+  background-color: #D6EDEA;
+}
+pre.editor-colors.is-focused .line-number.cursor-line-no-selection,
+pre.editor-colors.is-focused .line.cursor-line {
+  background-color: rgba(144, 164, 174, 0.13);
+}
+.syntax--comment,
+.syntax--punctuation.syntax--definition.syntax--comment {
+  font-style: italic;
+  color: #9ca4a6;
+}
+.syntax--string .syntax--constant.syntax--other.syntax--placeholder,
+.syntax--variable {
+  color: #80CBC4;
+}
+.syntax--constant.syntax--other.syntax--color {
+  color: #ffffff;
+}
+.syntax--invalid,
+.syntax--invalid.syntax--broken,
+.syntax--invalid.syntax--illegal {
+  color: #ffffff;
+  background-color: #E53935;
+}
+.syntax--invalid.syntax--unimplemented {
+  color: #ffffff;
+  background-color: #91B859;
+}
+.syntax--invalid.syntax--deprecated {
+  color: #ffffff;
+  background-color: #7C4DFF;
+}
+.syntax--keyword,
+.syntax--storage.syntax--modifier,
+.syntax--storage.syntax--type {
+  color: #7C4DFF;
+}
+.syntax--keyword.syntax--control,
+.syntax--storage.syntax--type {
+  font-style: italic;
+}
+.syntax--constant.syntax--other.syntax--color,
+.syntax--keyword.syntax--operator,
+.syntax--keyword.syntax--other.syntax--substitution,
+.syntax--keyword.syntax--other.syntax--template,
+.syntax--meta.syntax--tag,
+.syntax--punctuation,
+.syntax--punctuation.syntax--definition.syntax--tag,
+.syntax--punctuation.syntax--definition.syntax--tag.syntax--begin.syntax--html,
+.syntax--punctuation.syntax--definition.syntax--tag.syntax--end.syntax--html,
+.syntax--punctuation.syntax--definition.syntax--tag.syntax--html,
+.syntax--punctuation.syntax--section.syntax--embedded,
+.syntax--punctuation.syntax--separator.syntax--inheritance.syntax--php {
+  color: #39ADB5;
+}
+.syntax--entity.syntax--name.syntax--tag,
+.syntax--markup.syntax--deleted.syntax--git_gutter,
+.syntax--meta.syntax--tag.syntax--sgml {
+  color: #FF5370;
+}
+.syntax--entity.syntax--name.syntax--function,
+.syntax--keyword.syntax--other.syntax--special-method,
+.syntax--meta.syntax--block-level,
+.syntax--meta.syntax--function-call,
+.syntax--support.syntax--function,
+.syntax--variable.syntax--function {
+  color: #6182B8;
+}
+.syntax--string.syntax--other.syntax--link,
+.syntax--support.syntax--other.syntax--variable {
+  color: #FF5370;
+}
+.syntax--constant.syntax--character,
+.syntax--constant.syntax--language,
+.syntax--constant.syntax--numeric,
+.syntax--keyword.syntax--other.syntax--unit,
+.syntax--support.syntax--constant,
+.syntax--variable.syntax--parameter {
+  color: #F76D47;
+}
+.syntax--constant.syntax--other.syntax--key,
+.syntax--constant.syntax--other.syntax--symbol,
+.syntax--entity.syntax--other.syntax--inherited-class,
+.syntax--markup.syntax--heading,
+.syntax--markup.syntax--inserted.syntax--git_gutter,
+.syntax--meta.syntax--group.syntax--braces.syntax--curly .syntax--constant.syntax--other.syntax--object.syntax--key.syntax--js .syntax--string.syntax--unquoted.syntax--label.syntax--js,
+.syntax--string {
+  color: #91B859;
+}
+.syntax--entity.syntax--name.syntax--class,
+.syntax--entity.syntax--name.syntax--type.syntax--class,
+.syntax--markup.syntax--changed.syntax--git_gutter,
+.syntax--meta.syntax--use.syntax--php,
+.syntax--support.syntax--class,
+.syntax--support.syntax--orther.syntax--namespace.syntax--use.syntax--php,
+.syntax--support.syntax--other.syntax--namespace.syntax--php,
+.syntax--support.syntax--type,
+.syntax--support.syntax--type.syntax--sys-types {
+  color: #FFB62C;
+}
+.syntax--source.syntax--css .syntax--support.syntax--type,
+.syntax--source.syntax--less .syntax--support.syntax--type,
+.syntax--source.syntax--sass .syntax--support.syntax--type,
+.syntax--source.syntax--scss .syntax--support.syntax--type,
+.syntax--source.syntax--stylus .syntax--support.syntax--type {
+  color: #8796B0;
+}
+.syntax--entity.syntax--name.syntax--module.syntax--js,
+.syntax--variable.syntax--import.syntax--parameter.syntax--js,
+.syntax--variable.syntax--other.syntax--class.syntax--js {
+  color: #E53935;
+}
+.syntax--variable.syntax--language {
+  font-style: italic;
+  color: #E53935;
+}
+.syntax--entity.syntax--name.syntax--method.syntax--js {
+  color: #6182B8;
+}
+.syntax--meta.syntax--class-method.syntax--js .syntax--entity.syntax--name.syntax--function.syntax--js,
+.syntax--variable.syntax--function.syntax--constructor {
+  color: #6182B8;
+}
+.syntax--entity.syntax--other.syntax--attribute-name {
+  color: #7C4DFF;
+}
+.syntax--text.syntax--html.syntax--basic .syntax--entity.syntax--other.syntax--attribute-name,
+.syntax--text.syntax--html.syntax--basic .syntax--entity.syntax--other.syntax--attribute-name.syntax--html {
+  font-style: italic;
+  color: #FFB62C;
+}
+.syntax--entity.syntax--other.syntax--attribute-name.syntax--class {
+  color: #FFB62C;
+}
+.syntax--source.syntax--sass .syntax--keyword.syntax--control {
+  color: #6182B8;
+}
+.syntax--markup.syntax--inserted {
+  color: #91B859;
+}
+.syntax--markup.syntax--deleted {
+  color: #E53935;
+}
+.syntax--markup.syntax--changed {
+  color: #7C4DFF;
+}
+.syntax--string.syntax--regexp {
+  color: #39ADB5;
+}
+.syntax--constant.syntax--character.syntax--escape {
+  color: #39ADB5;
+}
+* .syntax--link *,
+* .syntax--uri *,
+* .syntax--url * {
+  text-decoration: underline;
+}
+.syntax--constant.syntax--numeric.syntax--line-number.syntax--find-in-files:not(.syntax--match) {
+  color: #C17E70;
+}
+.syntax--entity.syntax--name.syntax--filename.syntax--find-in-files {
+  color: #91B859;
+}
+.syntax--tag.syntax--decorator.syntax--js .syntax--entity.syntax--name.syntax--tag.syntax--js,
+.syntax--tag.syntax--decorator.syntax--js .syntax--punctuation.syntax--definition.syntax--tag.syntax--js {
+  font-style: italic;
+  color: #6182B8;
+}
+.syntax--source.syntax--js .syntax--constant.syntax--other.syntax--object.syntax--key.syntax--js .syntax--string.syntax--unquoted.syntax--label.syntax--js {
+  font-style: italic;
+  color: #E53935;
+}
+.syntax--source.syntax--json .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta.syntax--structure.syntax--dictionary.syntax--json .syntax--punctuation.syntax--definition.syntax--string:not(.syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta.syntax--structure.syntax--dictionary.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--value.syntax--json .syntax--punctuation.syntax--definition.syntax--string),
+.syntax--source.syntax--json .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta.syntax--structure.syntax--dictionary.syntax--json .syntax--string.syntax--quoted.syntax--double.syntax--json:not(.syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta.syntax--structure.syntax--dictionary.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--value.syntax--json .syntax--string.syntax--quoted.syntax--double.syntax--json) {
+  color: #91B859;
+}
+.syntax--source.syntax--json .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta.syntax--structure.syntax--dictionary.syntax--json .syntax--punctuation.syntax--definition.syntax--string:not(.syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta.syntax--structure.syntax--dictionary.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--value.syntax--json .syntax--punctuation.syntax--definition.syntax--string),
+.syntax--source.syntax--json .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta.syntax--structure.syntax--dictionary.syntax--json .syntax--string.syntax--quoted.syntax--double.syntax--json:not(.syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta.syntax--structure.syntax--dictionary.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--value.syntax--json .syntax--string.syntax--quoted.syntax--double.syntax--json) {
+  color: #7C4DFF;
+}
+.syntax--source.syntax--json .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta.syntax--structure.syntax--dictionary.syntax--json .syntax--punctuation.syntax--definition.syntax--string:not(.syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta.syntax--structure.syntax--dictionary.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--value.syntax--json .syntax--punctuation.syntax--definition.syntax--string),
+.syntax--source.syntax--json .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta.syntax--structure.syntax--dictionary.syntax--json .syntax--string.syntax--quoted.syntax--double.syntax--json:not(.syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta.syntax--structure.syntax--dictionary.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--value.syntax--json .syntax--string.syntax--quoted.syntax--double.syntax--json) {
+  color: #FF5370;
+}
+.syntax--source.syntax--json .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta.syntax--structure.syntax--dictionary.syntax--json .syntax--punctuation.syntax--definition.syntax--string:not(.syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta.syntax--structure.syntax--dictionary.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--value.syntax--json .syntax--punctuation.syntax--definition.syntax--string),
+.syntax--source.syntax--json .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta.syntax--structure.syntax--dictionary.syntax--json .syntax--string.syntax--quoted.syntax--double.syntax--json:not(.syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta.syntax--structure.syntax--dictionary.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--value.syntax--json .syntax--string.syntax--quoted.syntax--double.syntax--json) {
+  color: #6182B8;
+}
+.syntax--source.syntax--json .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta.syntax--structure.syntax--dictionary.syntax--json .syntax--punctuation.syntax--definition.syntax--string:not(.syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta.syntax--structure.syntax--dictionary.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--value.syntax--json .syntax--punctuation.syntax--definition.syntax--string),
+.syntax--source.syntax--json .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta.syntax--structure.syntax--dictionary.syntax--json .syntax--string.syntax--quoted.syntax--double.syntax--json:not(.syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta.syntax--structure.syntax--dictionary.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--value.syntax--json .syntax--string.syntax--quoted.syntax--double.syntax--json) {
+  color: #C17E70;
+}
+.syntax--source.syntax--json .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta.syntax--structure.syntax--dictionary.syntax--json .syntax--punctuation.syntax--definition.syntax--string:not(.syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta.syntax--structure.syntax--dictionary.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--value.syntax--json .syntax--punctuation.syntax--definition.syntax--string),
+.syntax--source.syntax--json .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta.syntax--structure.syntax--dictionary.syntax--json .syntax--string.syntax--quoted.syntax--double.syntax--json:not(.syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta .syntax--meta.syntax--structure.syntax--dictionary.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--value.syntax--json .syntax--string.syntax--quoted.syntax--double.syntax--json) {
+  color: #E53935;
+}
+.syntax--source.syntax--json .syntax--meta .syntax--meta .syntax--meta .syntax--meta.syntax--structure.syntax--dictionary.syntax--json .syntax--punctuation.syntax--definition.syntax--string:not(.syntax--meta .syntax--meta .syntax--meta .syntax--meta.syntax--structure.syntax--dictionary.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--value.syntax--json .syntax--punctuation.syntax--definition.syntax--string),
+.syntax--source.syntax--json .syntax--meta .syntax--meta .syntax--meta .syntax--meta.syntax--structure.syntax--dictionary.syntax--json .syntax--string.syntax--quoted.syntax--double.syntax--json:not(.syntax--meta .syntax--meta .syntax--meta .syntax--meta.syntax--structure.syntax--dictionary.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--value.syntax--json .syntax--string.syntax--quoted.syntax--double.syntax--json) {
+  color: #F76D47;
+}
+.syntax--source.syntax--json .syntax--meta .syntax--meta.syntax--structure.syntax--dictionary.syntax--json .syntax--punctuation.syntax--definition.syntax--string:not(.syntax--meta .syntax--meta.syntax--structure.syntax--dictionary.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--value.syntax--json .syntax--punctuation.syntax--definition.syntax--string),
+.syntax--source.syntax--json .syntax--meta .syntax--meta.syntax--structure.syntax--dictionary.syntax--json .syntax--string.syntax--quoted.syntax--double.syntax--json:not(.syntax--meta .syntax--meta.syntax--structure.syntax--dictionary.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--value.syntax--json .syntax--string.syntax--quoted.syntax--double.syntax--json) {
+  color: #FFB62C;
+}
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json .syntax--punctuation.syntax--definition.syntax--string:not(.syntax--meta.syntax--structure.syntax--dictionary.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--value.syntax--json .syntax--punctuation.syntax--definition.syntax--string),
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json .syntax--string.syntax--quoted.syntax--double.syntax--json:not(.syntax--meta.syntax--structure.syntax--dictionary.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--value.syntax--json .syntax--string.syntax--quoted.syntax--double.syntax--json) {
+  color: #7C4DFF;
+}
+.syntax--punctuation.syntax--definition.syntax--list_item.syntax--markdown,
+.syntax--text.syntax--html.syntax--markdown {
+  color: #80CBC4;
+}
+.syntax--text.syntax--html.syntax--markdown .syntax--markup.syntax--raw.syntax--inline {
+  color: #7C4DFF;
+}
+.syntax--text.syntax--html.syntax--markdown .syntax--punctuation.syntax--definition.syntax--raw.syntax--markdown {
+  color: #E7EAEC;
+}
+.syntax--markdown.syntax--heading,
+.syntax--markup.syntax--heading,
+.syntax--markup.syntax--heading .syntax--entity.syntax--name,
+.syntax--markup.syntax--heading.syntax--markdown .syntax--punctuation.syntax--definition.syntax--heading.syntax--markdown {
+  color: #91B859;
+}
+.syntax--markup.syntax--italic {
+  font-style: italic;
+  color: #FF5370;
+}
+.syntax--markup.syntax--bold,
+.syntax--markup.syntax--bold .syntax--string {
+  font-weight: bold;
+  color: #FF5370;
+}
+.syntax--markup.syntax--bold .syntax--markup.syntax--italic,
+.syntax--markup.syntax--bold .syntax--markup.syntax--italic .syntax--string,
+.syntax--markup.syntax--italic .syntax--markup.syntax--bold,
+.syntax--markup.syntax--italic .syntax--markup.syntax--bold .syntax--string,
+.syntax--markup.syntax--quote .syntax--markup.syntax--bold,
+.syntax--markup.syntax--quote .syntax--markup.syntax--bold .syntax--string {
+  font-weight: bold;
+  font-style: italic;
+}
+.syntax--markup.syntax--underline {
+  text-decoration: underline;
+  color: #F76D47;
+}
+.syntax--markup.syntax--quote .syntax--punctuation.syntax--definition.syntax--blockquote.syntax--markdown {
+  color: #E7EAEC;
+  background-color: #E7EAEC;
+}
+.syntax--markup.syntax--quote {
+  font-style: italic;
+}
+.syntax--string.syntax--other.syntax--link.syntax--title.syntax--markdown {
+  color: #6182B8;
+}
+.syntax--string.syntax--other.syntax--link.syntax--description.syntax--title.syntax--markdown {
+  color: #7C4DFF;
+}
+.syntax--constant.syntax--other.syntax--reference.syntax--link.syntax--markdown {
+  color: #FFB62C;
+}
+.syntax--markup.syntax--raw.syntax--block {
+  color: #7C4DFF;
+}
+.syntax--markup.syntax--raw.syntax--block.syntax--fenced.syntax--markdown {
+  background-color: rgba(144, 164, 174, 0.13);
+}
+.syntax--punctuation.syntax--definition.syntax--fenced.syntax--markdown {
+  background-color: rgba(144, 164, 174, 0.13);
+}
+.syntax--markup.syntax--raw.syntax--block.syntax--fenced.syntax--markdown,
+.syntax--punctuation.syntax--section.syntax--class.syntax--end,
+.syntax--variable.syntax--language.syntax--fenced.syntax--markdown {
+  color: #80CBC4;
+}
+.syntax--variable.syntax--language.syntax--fenced.syntax--markdown {
+  color: #E7EAEC;
+}
+.syntax--text.syntax--html.syntax--markdown .syntax--punctuation.syntax--definition {
+  color: #CCD7DA;
+}
+.syntax--text.syntax--html.syntax--markdown .syntax--meta.syntax--disable-markdown .syntax--punctuation.syntax--definition {
+  color: #39ADB5;
+}
+.syntax--meta.syntax--separator {
+  font-weight: bold;
+  color: #E7EAEC;
+  background-color: rgba(144, 164, 174, 0.13);
+}
+.syntax--markup.syntax--table {
+  color: #80CBC4;
+}
+.syntax--acejump.syntax--label.syntax--blue {
+  color: #ffffff;
+  background-color: #6182B8;
+}
+.syntax--acejump.syntax--label.syntax--green {
+  color: #ffffff;
+  background-color: #91B859;
+}
+.syntax--acejump.syntax--label.syntax--orange {
+  color: #ffffff;
+  background-color: #F76D47;
+}
+.syntax--acejump.syntax--label.syntax--purple {
+  color: #ffffff;
+  background-color: #7C4DFF;
+}
+.syntax--sublimelinter.syntax--mark.syntax--warning {
+  color: #FFB62C;
+}
+.syntax--sublimelinter.syntax--gutter-mark {
+  color: #ffffff;
+}
+.syntax--sublimelinter.syntax--mark.syntax--error {
+  color: #E53935;
+}
+.syntax--sublimelinter.syntax--annotations {
+  background-color: #C17E70;
+}
+.syntax--markup.syntax--ignored.syntax--git_gutter {
+  color: #E7EAEC;
+}
+.syntax--markup.syntax--untracked.syntax--git_gutter {
+  color: #E7EAEC;
+}
+.syntax--markup.syntax--inserted.syntax--git_gutter {
+  color: #91B859;
+}
+.syntax--markup.syntax--changed.syntax--git_gutter {
+  color: #FFB62C;
+}
+.syntax--markup.syntax--deleted.syntax--git_gutter {
+  color: #E53935;
+}
+.syntax--brackethighlighter.syntax--default {
+  color: #8796B0;
+}
+.syntax--brackethighlighter.syntax--quote {
+  color: #91B859;
+}
+.syntax--brackethighlighter.syntax--unmatched {
+  color: #E53935;
+}
+[data-grammar*="gfm"] .syntax--markup.syntax--underline.syntax--link {
+  color: #ff869a;
+}
+[data-grammar*="gfm"] .syntax--markup.syntax--underline.syntax--link span.syntax--punctuation {
+  color: #ff5370;
+}
+[data-grammar*="gfm"] .syntax--markup.syntax--strike {
+  position: relative;
+  color: rgba(96, 125, 139, 0.5);
+}
+[data-grammar*="gfm"] .syntax--markup.syntax--strike::after {
+  content: "";
+  position: absolute;
+  top: calc(54%);
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: rgba(96, 125, 139, 0.2);
+}
+[data-grammar*="gfm"] .syntax--table .syntax--border {
+  color: rgba(96, 125, 139, 0.5);
+}
+[data-grammar*="gfm"] .syntax--markup.syntax--heading {
+  color: #82b1ff;
+}
+[data-grammar*="gfm"] .syntax--punctuation.syntax--definition.syntax--begin,
+[data-grammar*="gfm"] .syntax--punctuation.syntax--definition.syntax--end {
+  color: #82b1ff;
+}
+[data-grammar*="gfm"] .syntax--punctuation.syntax--definition.syntax--begin + span:not(.syntax--function.syntax--parameter) {
+  color: #9cc1ff;
+}
+.bracket-matcher .region {
+  border-bottom: 1px solid #009688;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: rgba(96, 125, 139, 0.1);
+  box-shadow: inset 0 -1px 0 #009688;
+  z-index: 100;
+}
+pre.editor-colors.is-focused .selection .region {
+  background-color: #D6EDEA;
+  border-radius: 0.125rem;
+}
+.syntax--variable.syntax--instance,
+.syntax--variable.syntax--instance > * {
+  color: #E53935;
+}
+.syntax--meta.syntax--delimiter.syntax--period {
+  color: #945eb8;
+}
+.syntax--meta.syntax--brace {
+  color: #8796B0;
+}
+.syntax--meta.syntax--tag.syntax--doctype {
+  color: #945eb8;
+}
+.syntax--meta .syntax--string.syntax--quoted {
+  color: #91b859;
+}
+.syntax--meta.syntax--array.syntax--json .syntax--string.syntax--quoted {
+  color: #80CBC4;
+}
+.syntax--meta.syntax--array.syntax--json .syntax--string.syntax--quoted > * {
+  color: currentColor;
+}
+.syntax--meta .syntax--punctuation.syntax--separator.syntax--key-value + .syntax--string.syntax--quoted {
+  color: #80CBC4;
+}
+.syntax--meta .syntax--punctuation.syntax--separator.syntax--key-value + .syntax--string.syntax--quoted * {
+  color: currentColor;
+}
+.syntax--meta.syntax--structure.syntax--dictionary .syntax--string.syntax--quoted {
+  color: #91b859;
+}
+.syntax--meta.syntax--structure.syntax--dictionary .syntax--string.syntax--quoted .syntax--punctuation.syntax--string {
+  color: currentColor;
+}
+.syntax--support.syntax--constant {
+  color: #8796B0;
+}
+.syntax--keyword.syntax--operator.syntax--logical,
+.syntax--keyword.syntax--operator.syntax--comparison,
+.syntax--keyword.syntax--operator.syntax--assignment {
+  color: #3fb3a8;
+}
+.syntax--punctuation.syntax--section.syntax--embedded .syntax--source.syntax--php,
+.syntax--variable.syntax--interpolation .syntax--source.syntax--php {
+  color: currentColor;
+}
+</style>
+  </head>
+  <body class='markdown-preview'><h1>Computer Networks Midterm Review</h1>
+<h1>Chapter 1 Computer Networks and the Internet</h1>
+<h2>Section 1.1 What is the Internet?</h2>
+<p><strong>R1. What is the difference between a host and an end system? List several different types of end systems. Is a Web server an end system?</strong></p>
+<p>There is no difference beween a host and an end system.</p>
+<p>End systems include laptops, smartphones, tablets, TVs, game consoles, watches, eye glasses, etc.</p>
+<p>A Web server is an end system.</p>
+<p><strong>R3. Why are standards important for protocols?</strong></p>
+<p>Standards are important for protocols so that people can create networking systems and products that interoperate.</p>
+<h2>Section 1.2 The Network Edge</h2>
+<p><strong>List six access technologies. Classify each one as home access, enterprise access, or wide-area wireless access.</strong></p>
+<p>Home Access</p>
+<ul>
+<li>Digital Subscriber Line (DSL)</li>
+<li>Cable</li>
+<li>Fiber to the Home (FTTH)</li>
+<li>Dial-up</li>
+<li>Satellite</li>
+</ul>
+<p>Enterprise Access</p>
+<ul>
+<li>Ethernet</li>
+<li>WiFi</li>
+</ul>
+<p>Wide-Area Wireless Access</p>
+<ul>
+<li>3G</li>
+<li>LTE</li>
+</ul>
+<p><strong>R5. Is HFC transmission rate dedicated or shared among users? Are collisions possible in a downstream HFC channel? Why or why not?</strong></p>
+<p>HFC bandwidth is shared among the users. On the downstream channel, all packets emanate from a single source, namely, the head end. Thus, there are no collisions in the downstream channel.</p>
+<p><strong>R7. Why is DSL much faster than dial-up access?</strong></p>
+<p>???</p>
+<p><strong>R8. What are some of the physical media that Ethernet can run over?</strong></p>
+<ul>
+<li>Twisted-Pair Copper Wire</li>
+<li>Fiber Optics</li>
+</ul>
+<p><strong>R9. Dial-up modems, HFC, DSL and FTTH are all used for residential access. For each of these access technologies, provide a range of transmission rates and comment on whether the transmission rate is shared or dedicated.</strong></p>
+<ul>
+<li>Dial-up</li>
+</ul>
+<p>Up to 56 Kbps.</p>
+<p>Bandwidth is dedicated.</p>
+<ul>
+<li>DSL</li>
+</ul>
+<p>Up to 55 Mbps downstream and 15 Mbps upstream.</p>
+<p>Bandwidth is dedicated.</p>
+<ul>
+<li>HFC</li>
+</ul>
+<p>Up to 42.8 Mbps downstream and 30.7 Mbps upstream.</p>
+<p>Bandwidth is shared.</p>
+<ul>
+<li>FTTH</li>
+</ul>
+<p>Up to gigabits per second (potentially).</p>
+<p>Bandwidth is not shared. (???)</p>
+<h2>Section 1.3 The Network Core</h2>
+<p><strong>R12. What advantage does a circuit-switched network have over a packet-switched network? What advantages does TDM have over FDM in a circuit-switched network?</strong></p>
+<p><strong>Packet Switching Versus Circuit Switching</strong></p>
+<ul>
+<li>Better sharing of transmission capacity as circuit switching is wasteful during silent periods.</li>
+<li>Simpler, more efficient and less costly to implement</li>
+<li>Not suitable for real-time services because of its variable and unpredictable end-to-end delays (primarily quesing delays).</li>
+<li>A circuit-switched network can guarantee a certain amount of end-to-end bandwidth for the duration of a call.</li>
+</ul>
+<p>FDM requires sophisticated analog hardware to shift signal into appropriate frequency bands.</p>
+<p><strong>R14. Why will two ISPs at the same level of the hierarchy often peer with each other? How does an IXP earn money?</strong></p>
+<p>If the two ISPs do not peer with each other, then when they send traffic to each other they have to send the traffic through a provider ISP (intermediary), to which they have to pay for carrying the traffic. By peering with each other directly, the two ISPs can <strong>reduce their payments to their provider ISPs</strong>.</p>
+<p>An Internet Exchange Points (IXP) (typically in a standalone building with its own switches) is a meeting point where multiple ISPs can connect and/or peer together.</p>
+<p>An ISP earns its money by <strong>charging each of the the ISPs that connect to the IXP</strong> a relatively small fee, which may depend on the amount of traffic sent to or received from the IXP.</p>
+<p><strong>R15. Why is a content provider considered a different Internet entity today? How does a content provider connect to other ISPs? Why?</strong></p>
+<p>A content provider is considered a different Internet entity because it’s often interconnected and via private network, which is separate from the public Internet.</p>
+<p>A content provider connect to lower-tier ISPs, either by directly connection or by connecting with them at IXPs. It attempts to “bypass” the upper tiers of the Internet.</p>
+<p>It do so to reduce its payments to upper-tier ISPs and to have greater control of how its services are ultimately delivered to end users.</p>
+<h2>Section 1.4 Dealy, Loss and Throughput in Packet-Switched Networks</h2>
+<p><strong>R16. Consider sending a packet from a source host to a destination host over a fixed route. List the delay components in the end-to-end delay. Which of these delays are constant and which are variable?</strong></p>
+<p><span class="math"><script type="math/tex">d_{nodal} = d_{proc} + d_{queue} + d_{trans} + d_{prop}</script></span></p>
+<p><span class="math"><script type="math/tex">d_{proc}</script></span>, <span class="math"><script type="math/tex">d_{trans}</script></span>, <span class="math"><script type="math/tex">d_{prop}</script></span> is constant if the length of the packet is fixed.</p>
+<p><span class="math"><script type="math/tex">d_{queue}</script></span> is variable.</p>
+<p><strong>R20. Suppose end system A wants to send a large file to end system B. At a very high level, describe how end system A creates packets from the file. When one of these packets arrives to a packet switch, what information in the packet does the switch use to determine the link onto which the packet is forwarded? Why is packet switching in the Internet analogous to driving from one city to another and asking directions along the way?</strong></p>
+<p>End system A <strong>breaks</strong> the large file into chunks. It <strong>adds header</strong> to each chunk, thereby <strong>generating multiple packets</strong> from the file. The header (<strong>Network Layer</strong>) in each packet includes the IP address of the destination (end system B).</p>
+<p>The packet switch uses the <strong>destination IP address</strong> in the packet to determine the outgoing link.</p>
+<p>Asking which road to take is analogous to a packet asking which outgoing link it should be forwarded on, given the packet’s destination address.</p>
+<h2>Section 1.5 Protocol Layers and Their Service Models</h2>
+<p><strong>R22. If two end-systems are connected through multiple routers and the data-link level between them ensures reliable data delivery, is a transport protocol offering reliable data delivery between these two end-systems necessary? Why?</strong></p>
+<p>???</p>
+<p><strong>R25. Which layers in the Internet protocol stack does a router process? Which layers does a link-layer switch process? Which layers does a host process?</strong></p>
+<p>Routers process network, link and physical layers.</p>
+<blockquote>
+<p>This is a little bit of a white lie, as modern routers sometimes act as firewalls or caching
+components, and process Transport layer as well.</p>
+</blockquote>
+<p>Link layer switches process link and physical layers (layers 1 through2).</p>
+<p>Hosts process all five layers.</p>
+<h2>Section 1.6 Networks Under Attack</h2>
+<p><strong>R26. If you want to spy on what websites your classmates are visiting with their laptops thourgh the university’s WiFi network, what could you do?</strong></p>
+<p>Place a passive receiver in the vicinity of the wireless transmitter, that receiver can obtain a copy of every packet that is transmitted.</p>
+<h1>Chapter 2 Application Layer</h1>
+<h2>Section 2.1 Principles of Network Applications</h2>
+<p><strong>R1. List five nonproprietary Internet applications and the application-layer protocols that they use.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Application</th>
+<th>Application-Layer Protocol</th>
+<th>Underlying Transport Protocol</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Electronic mail</td>
+<td>SMTP</td>
+<td>TCP</td>
+</tr>
+<tr>
+<td>Remote terminal access</td>
+<td>Telnet</td>
+<td>TCP</td>
+</tr>
+<tr>
+<td>Web</td>
+<td>HTTP</td>
+<td>TCP</td>
+</tr>
+<tr>
+<td>File transfer</td>
+<td>FTP</td>
+<td>TCP</td>
+</tr>
+<tr>
+<td>Streaming multimedia</td>
+<td>HTTP</td>
+<td>TCP</td>
+</tr>
+<tr>
+<td>Internet telephony</td>
+<td>SIP, RTP, or proprietary (eg. Skype)</td>
+<td>UDP or TCP</td>
+</tr>
+</tbody>
+</table>
+<p><strong>R3. For a communication session between a pair of processes, which process is the client and which is the server?</strong></p>
+<p>The process which initiates the communication is the client; the process that waits to be contacted is the server.</p>
+<p><strong>R6. What components are needed to complete a Web application?</strong></p>
+<ol>
+<li>A standard for document formats (HTML)</li>
+<li>Web browsers</li>
+<li>Web servers</li>
+<li>An application-layer protocol (HTTP)</li>
+</ol>
+<p><strong>R8. List the four broad classes of services that a transport protocol can provide. For each of the service classes, indicate if either UDP or TCP (or both) pro- vides such a service.</strong></p>
+<ul>
+<li>Reliable Data Transfer (TCP)</li>
+<li>Throughput (Neither)</li>
+<li>Timing (Neither)</li>
+<li>Security (Neither)</li>
+</ul>
+<p><strong>R9. Does SSL operate at the transport layer or the application layer? If the application developer wants TCP to be enhanced with SSL, what does the developer have to do?</strong></p>
+<p>SSL operates at the application layer.</p>
+<p>If the application developer wants TCP to be enhanced with SSL, she has to include the SSL code (existing, highly optimized libraries and classes) in the application.</p>
+<h2>Section 2.2 - 2.4 HTTP, SMTP, IMAP, POP3, DNS</h2>
+<p><strong>R10. What is meant by a handshaking protocol?</strong></p>
+<p>A protocol uses handshaking if the two communicating entities first exchange control packets before sending data to each other.</p>
+<p>SMTP uses handshaking at the application layer whereas HTTP does not.</p>
+<p><strong>R11. What does a stateless protocol mean? Is IMAP stateless? What about SMTP?</strong></p>
+<p>???
+A stateless protocol maintains no information about the clients. IMAP is stateful. SMTP and POP3 are stateless.</p>
+<p><strong>R12. How can websites keep track of users? Do they always need to use cookies?</strong></p>
+<p>By using cookies. Cookie technology has four components,</p>
+<ul>
+<li>A cookie header line in the HTTP response message</li>
+<li>A cookie header line in the HTTP request message</li>
+<li>A cookie file kept on the user’s end system and managed by the user’s browser</li>
+<li>A back-end database at the Web site</li>
+</ul>
+<p>???
+Yes.</p>
+<p><strong>R13. Will Web caching reduce the delay for all objects requested by a user or for only some of the objects? Why?</strong></p>
+<p>Web caching can reduce the delay for all objects, even objects that are not cached, since caching reduces the traffic on links.</p>
+<p><strong>R15. How can arbitrary data be transmitted over SMTP?</strong></p>
+<p>The data has to be encoded into 7-bit ASCII before being put into one message.</p>
+<p><strong>R19. Why are MX records needed?</strong></p>
+<p>An organization’s mail server and Web server can have the same alias for a host name.</p>
+<p><strong>R20. What is the difference between recursive and iterative DNS queries?</strong></p>
+<p>With recursive queries, the host asks the DNS server to obtain the DNS mapping on its behalf. With iterative queries, the DNS  server directly returns the replies.</p>
+<h2>Section 2.5 P2P</h2>
+<p><span class="math"><script type="math/tex">D_{CS} = \max \{ \frac{NF}{u_s}, \frac{F}{d_{min}} \}</script></span></p>
+<p><span class="math"><script type="math/tex">D_{P2P} = \max \{ \frac{F}{u_s}, \frac{F}{d_{min}}, \frac{NF}{u_s + \sum_{i=1}^N{u_i}} \}</script></span></p>
+<p><strong>R22. Consider a new peer Alice that joins BitTorrent without possessing any chunks. Without any chunks, she cannot become a top-four uploader for any of the other peers, since she has nothing to upload. How then will Alice get her first chunk?</strong></p>
+<p>Recall that in BitTorrent, a peer picks a random peer and optimistically unchokes the peer for a short period of time.</p>
+<p>Therefore, Alice will eventually be optimistically unchoked by one of her neighbors, during which time she will receive chunks from that neighbor.</p>
+<h2>Section 2.6 Video Streaming and CDNs</h2>
+<p><strong>R24. CDNs typically adopt one of two different server placement philosophies. Name and briefly describe them.</strong></p>
+<ul>
+<li>Enter Deep</li>
+</ul>
+<p>Enter deep into the access networks of ISP by deploying server clusters in access ISPs all over the world.</p>
+<ul>
+<li>Bring Home</li>
+</ul>
+<p>Bring the ISPs home by building large clusters at a smaller number of sites (typically place their clusters in IXPs [Internet Exchange Points]).</p>
+<p><strong>R26. In Section 2.7, the UDP server described needed only one socket, whereas the TCP server needed two sockets. Why? If the TCP server were to support n simultaneous connections, each from a different client host, how many sockets would the TCP server need?</strong></p>
+<p>With the UDP server, there is <strong>no welcoming socket</strong>, and all data from different clients enters the server through this one socket.</p>
+<p>With the TCP server, there is a welcoming socket, and each time a client initiates a connection to the server, a new socket is created.</p>
+<p>Thus, to support n simultaneous connections, the server would need n+1 sockets.</p>
+<p><strong>R27. For the client-server application over TCP described in Section 2.7, why must the server program be executed before the client program? For the client- server application over UDP, why may the client program be executed before the server program?</strong></p>
+<p>For the TCP application, as soon as the client is executed, it <strong>attempts to initiate a TCP connection</strong> with the server.</p>
+<p>If the TCP server is not running, then the client will fail to make a connection.</p>
+<p>For the UDP application, the client does not initiate connections (or attempt to communicate with the UDP server) immediately upon execution.</p>
+<h1>Chapter 3 Transport Layer</h1>
+<h2>Section 3.1 - 3.3 Introduction, Multiplexing and Demultiplexing, UDP</h2>
+<p>User Datagram Protocol</p>
+<p><strong>R3. How is a UDP socket fully identified? What about a TCP socket? What is the difference between the full identification of both sockets?</strong></p>
+<p>UDP: (destination IP address, destination port number)</p>
+<p>TCP: (source IP address, source port number, destination IP address, destination port number)</p>
+<p><strong>R4. Describe why an application developer might choose to run an application over UDP rather than TCP.</strong></p>
+<ul>
+<li>Avoid congestion control</li>
+<li>Do not need reliable data transfer</li>
+</ul>
+<p><strong>R5. Why is it that voice and video traffic is often sent over TCP rather than UDP in today’s Internet? (Hint: The answer we are looking for has nothing to do with TCP’s congestion-control mechanism.)</strong></p>
+<p>Since <strong>most firewalls</strong> are configured to block UDP traffic, using TCP for video and voice traffic lets the traffic though the firewalls.</p>
+<p><strong>R6. Is it possible for an application to enjoy reliable data transfer even when the application runs over UDP? If so, how?</strong></p>
+<p>Yes. The application developer can put reliable data transfer into the application layer protocol. This would require a significant amount of work and debugging, however.</p>
+<p><strong>R7. Suppose a process in Host C has a UDP socket with port number 6789. Sup- pose both Host A and Host B each send a UDP segment to Host C with destination port number 6789. Will both of these segments be directed to the same socket at Host C? If so, how will the process at Host C know that these two segments originated from two different hosts?</strong></p>
+<p>Yes, both segments will be directed to the same socket.</p>
+<p>For each received segment, at the socket interface, the operating system will provide the process with the <strong>IP addresses</strong> to determine the origins of the individual segments.</p>
+<p><strong>R8. Suppose that a Web server runs in Host C on port 80. Suppose this Web server uses persistent connections, and is currently receiving requests from two different Hosts, A and B. Are all of the requests being sent through the same socket at Host C? If they are being passed through different sockets, do both of the sockets have port 80? Discuss and explain.</strong></p>
+<p>For each persistent connection, the Web server creates a separate “connection socket”.</p>
+<p>When host C receives and IP datagram, it examines these four fields in the datagram/segment to determine to which socket it should pass the payload of the TCP segment. Thus, the requests from A and B pass through different sockets.</p>
+<p>The identifier for both of these sockets has 80 for the destination port; however, the identifiers for these sockets have different values for source IP addresses.</p>
+<h2>Section 3.4 Principles of Reliable Data Transfer</h2>
+<p><strong>R9. In our <span class="math"><script type="math/tex">rdt</script></span> protocols, why did we need to introduce sequence numbers?</strong></p>
+<p>Sequence numbers are required for a receiver to find out whether an arriving packet contains <strong>new data or is a retransmission</strong>.</p>
+<p><strong>R10. In our <span class="math"><script type="math/tex">rdt</script></span> protocols, why did we need to introduce timers?</strong></p>
+<p>To <strong>handle losses</strong> in the channel.</p>
+<p>If the ACK for a transmitted packet is not received within the duration of the timer for the packet, the packet (or its ACK or NACK) is assumed to have been lost. Hence, the packet is retransmitted.</p>
+<p><strong>R11. Suppose that the roundtrip delay between sender and receiver is constant and known to the sender. Would a timer still be necessary in protocol rdt 3.0, assuming that packets can be lost? Explain.</strong></p>
+<p>To <strong>detect the loss</strong>, for each packet, a timer of constant duration will still be necessary at the sender.</p>
+<h2>Section 3.6 TCP</h2>
+<p>Transmission Control Protocol</p>
+<p><strong>R16. Consider the Telnet example discussed in Section 3.5. A few seconds after the user types the letter ‘C,’ the user types the letter ‘R.’ After typing the letter ‘R,’ how many segments are sent, and what is put in the sequence number and acknowledgment fields of the segments?</strong></p>
+<p>3 segments.</p>
+<ul>
+<li>First segment: seq = 43, ack =80;</li>
+<li>Second segment: seq = 80, ack = 44;</li>
+<li>Third segment; seq = 44, ack = 81</li>
+</ul>
+<h2>To do list</h2>
+<p>Format</p>
+<ul>
+<li>HTTP</li>
+<li>SMTP</li>
+<li>DNS</li>
+<li>TCP</li>
+<li>UDP</li>
+</ul>
+<p>Procedure</p>
+<ul>
+<li>rdt 1.0 - 3.0</li>
+<li>Socket Programming</li>
+<li>GBN</li>
+<li>SR</li>
+</ul>
+<p>Concepts Review</p>
+<p>Slides</p>
+<p>…</p></body>
+</html>
