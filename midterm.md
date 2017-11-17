@@ -164,28 +164,110 @@ File transfer  | FTP  |  TCP
 Streaming multimedia  |  HTTP |  TCP
 Internet telephony  |  SIP, RTP, or proprietary (eg. Skype) |  UDP or TCP
 
+**R3. For a communication session between a pair of processes, which process is the client and which is the server?**
 
+The process which initiates the communication is the client; the process that waits to be contacted is the server.
 
+**R6. What components are needed to complete a Web application?**
 
+1. A standard for document formats (HTML)
+2. Web browsers
+3. Web servers
+4. An application-layer protocol (HTTP)
 
+**R8. List the four broad classes of services that a transport protocol can provide. For each of the service classes, indicate if either UDP or TCP (or both) pro- vides such a service.**
 
+- Reliable Data Transfer (TCP)
+- Throughput (Neither)
+- Timing (Neither)
+- Security (Neither)
 
+**R9. Does SSL operate at the transport layer or the application layer? If the application developer wants TCP to be enhanced with SSL, what does the developer have to do?**
 
+SSL operates at the application layer.
 
+If the application developer wants TCP to be enhanced with SSL, she has to include the SSL code (existing, highly optimized libraries and classes) in the application.
 
+## Section 2.2 - 2.4 HTTP, SMTP, IMAP, POP3, DNS
 
+**R10. What is meant by a handshaking protocol?**
 
+A protocol uses handshaking if the two communicating entities first exchange control packets before sending data to each other.
 
+SMTP uses handshaking at the application layer whereas HTTP does not.
 
+**R11. What does a stateless protocol mean? Is IMAP stateless? What about SMTP?**
 
+???
+A stateless protocol maintains no information about the clients. IMAP is stateful. SMTP is stateless.
 
+**R12. How can websites keep track of users? Do they always need to use cookies?**
 
+By using cookies. Cookie technology has four components,
 
+- A cookie header line in the HTTP response message
+- A cookie header line in the HTTP request message
+- A cookie file kept on the user's end system and managed by the user's browser
+- A back-end database at the Web site
 
+???
+No, since they can also use information like user accounts, IP addresses, etc.
 
+**R13. Will Web caching reduce the delay for all objects requested by a user or for only some of the objects? Why?**
 
+Web caching can reduce the delay for all objects, even objects that are not cached, since caching reduces the traffic on links.
 
+**R15. How can arbitrary data be transmitted over SMTP?**
 
+The data has to be encoded into 7-bit ASCII before being put into one message.
+
+**R19. Why are MX records needed?**
+
+An organization’s mail server and Web server can have the same alias for a host name.
+
+**R20. What is the difference between recursive and iterative DNS queries?**
+
+With recursive queries, the host asks the DNS server to obtain the DNS mapping on its behalf. With iterative queries, the DNS  server directly returns the replies.
+
+## Section 2.5 P2P
+
+$D_{CS} = \max \{ \frac{NF}{u_s}, \frac{F}{d_{min}} \}$
+
+$D_{P2P} = \max \{ \frac{F}{u_s}, \frac{F}{d_{min}}, \frac{NF}{u_s + \sum_{i=1}^N{u_i}} \}$
+
+**R22. Consider a new peer Alice that joins BitTorrent without possessing any chunks. Without any chunks, she cannot become a top-four uploader for any of the other peers, since she has nothing to upload. How then will Alice get her first chunk?**
+
+Recall that in BitTorrent, a peer picks a random peer and optimistically unchokes the peer for a short period of time.
+
+Therefore, Alice will eventually be optimistically unchoked by one of her neighbors, during which time she will receive chunks from that neighbor.
+
+## Section 2.6 Video Streaming and CDNs
+
+**R24. CDNs typically adopt one of two different server placement philosophies. Name and briefly describe them.**
+
+- Enter Deep
+
+Enter deep into the access networks of ISP by deploying server clusters in access ISPs all over the world.
+
+- Bring Home
+
+Bring the ISPs home by building large clusters at a smaller number of sites (typically place their clusters in IXPs [Internet Exchange Points]).
+
+**R26. In Section 2.7, the UDP server described needed only one socket, whereas the TCP server needed two sockets. Why? If the TCP server were to support n simultaneous connections, each from a different client host, how many sockets would the TCP server need?**
+
+With the UDP server, there is **no welcoming socket**, and all data from different clients enters the server through this one socket.
+
+With the TCP server, there is a welcoming socket, and each time a client initiates a connection to the server, a new socket is created.
+
+Thus, to support n simultaneous connections, the server would need n+1 sockets.
+
+**R27. For the client-server application over TCP described in Section 2.7, why must the server program be executed before the client program? For the client- server application over UDP, why may the client program be executed before the server program?**
+
+For the TCP application, as soon as the client is executed, it **attempts to initiate a TCP connection** with the server.
+
+If the TCP server is not running, then the client will fail to make a connection.
+
+For the UDP application, the client does not initiate connections (or attempt to communicate with the UDP server) immediately upon execution.
 
 
 
