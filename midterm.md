@@ -103,7 +103,7 @@ An ISP earns its money by **charging each of the the ISPs that connect to the IX
 
 A content provider is considered a different Internet entity because it's often interconnected and via private network, which is separate from the public Internet.
 
-A content provider connect to lower-tier ISPs, either by directly connection or by connecting with them at IXPs. It attempts to "bypass" the upper tiers of the Internet.
+A content provider connect to lower-tier ISPs, either by direct connection or by connecting with them at IXPs. It attempts to "bypass" the upper tiers of the Internet.
 
 It do so to reduce its payments to upper-tier ISPs and to have greater control of how its services are ultimately delivered to end users.
 
@@ -130,6 +130,8 @@ Asking which road to take is analogous to a packet asking which outgoing link it
 **R22. If two end-systems are connected through multiple routers and the data-link level between them ensures reliable data delivery, is a transport protocol offering reliable data delivery between these two end-systems necessary? Why?**
 
 ???
+
+Tips: garbled data in routers.
 
 **R25. Which layers in the Internet protocol stack does a router process? Which layers does a link-layer switch process? Which layers does a host process?**
 
@@ -253,7 +255,7 @@ Enter deep into the access networks of ISP by deploying server clusters in acces
 
 Bring the ISPs home by building large clusters at a smaller number of sites (typically place their clusters in IXPs [Internet Exchange Points]).
 
-**R26. In Section 2.7, the UDP server described needed only one socket, whereas the TCP server needed two sockets. Why? If the TCP server were to support n simultaneous connections, each from a different client host, how many sockets would the TCP server need?**
+**R26. In Section 2.7, the UDP server described needed only one socket, whereas the TCP server needed two sockets. Why? If the TCP server were to support $n$ simultaneous connections, each from a different client host, how many sockets would the TCP server need?**
 
 With the UDP server, there is **no welcoming socket**, and all data from different clients enters the server through this one socket.
 
