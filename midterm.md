@@ -338,6 +338,12 @@ Transmission Control Protocol
 - Second segment: seq = 80, ack = 44;
 - Third segment; seq = 44, ack = 81
 
+## Section 3.7 TCP Congestion Control
+
+![](figures/congestion.png)
+
+![](figures/window.png)
+
 ## To do list
 
 Format
