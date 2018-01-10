@@ -334,8 +334,8 @@ Transmission Control Protocol
 
 3 segments.
 
-- First segment: seq = 43, ack =80;
-- Second segment: seq = 80, ack = 44;
+- First segment: seq = 43, ack = 80, data = `R`;
+- Second segment: seq = 80, ack = 44, data = `R`;
 - Third segment; seq = 44, ack = 81
 
 ## Section 3.7 TCP Congestion Control
@@ -343,27 +343,6 @@ Transmission Control Protocol
 ![](figures/congestion.png)
 
 ![](figures/window.png)
-
-## To do list
-
-Format
-
-- HTTP
-- SMTP
-- DNS
-- TCP
-- UDP
-
-Procedure
-
-- rdt 1.0 - 3.0
-- Socket Programming
-- GBN
-- SR
-
-Concepts Review
-
-Slides
 
 
 
