@@ -326,24 +326,6 @@ If the ACK for a transmitted packet is not received within the duration of the t
 
 To **detect the loss**, for each packet, a timer of constant duration will still be necessary at the sender.
 
-## Section 3.6 TCP
-
-Transmission Control Protocol
-
-**R16. Consider the Telnet example discussed in Section 3.5. A few seconds after the user types the letter ‘C,’ the user types the letter ‘R.’ After typing the letter ‘R,’ how many segments are sent, and what is put in the sequence number and acknowledgment fields of the segments?**
-
-3 segments.
-
-- First segment: seq = 43, ack = 80, data = `R`;
-- Second segment: seq = 80, ack = 44, data = `R`;
-- Third segment; seq = 44, ack = 81
-
-## Section 3.7 TCP Congestion Control
-
-![](figures/congestion.png)
-
-![](figures/window.png)
-
 
 
 
