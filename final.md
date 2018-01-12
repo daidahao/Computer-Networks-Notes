@@ -183,6 +183,7 @@ Each managed object within a managed device associated information that is colle
 
 A **network management agent** is a process running in the managed device that communicates with the managing server, taking local actions at the managed device under the command and control of the managing server.
 
+<img src="figures/network-management.png" width="500px"/>
 
 
 
