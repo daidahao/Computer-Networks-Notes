@@ -5,6 +5,8 @@
 - 6.6 - 6.7
 - 7.3.1 - 7.3.2
 
+# Chapter 3 Transport Layer
+
 ## Section 3.5 TCP
 
 <img src="figures/tcp-states.png" width="400px"/>
@@ -28,6 +30,8 @@ Transmission Control Protocol
 <img src="figures/congestion.png" width="500px"/>
 
 <img src="figures/window.png" width="400px"/>
+
+# Chapter 4 The Network Layer: Data Plane
 
 ## Section 4.1 Overview of Network Layer
 
@@ -102,6 +106,8 @@ Weighted fair queuing (WFQ) differs from round robin (RR) in that each class may
   - Forwarding
   - Dropping
   - Modify-field
+
+  # Chapter 5 The Network Layer: Control Plane
 
 ## Section 5.2 Routing Algorithms
 
@@ -185,6 +191,7 @@ A **network management agent** is a process running in the managed device that c
 
 <img src="figures/network-management.png" width="500px"/>
 
+# Chapter 6 The Link Layer and LANs
 
 ## Section 6.1 Intruduction to the Link Layer
 
@@ -262,6 +269,8 @@ No it is not possible. Each LAN has its own distinct set of adapters attached to
 **R13. What is a hub used for?**
 
 A hub is a physical-layer device that acts on individual bits rather than frames. When a bit, representing a zero or a one, arrives from one interface, the hub simply re-creates the bit, boosts its energy strength, and transmits the bit onto all the other interfaces.
+
+# Chapter 7 Wireless and Mobile Networks
 
 ## Section 7.3 WiFi: 802.11 Wireless LANs
 
