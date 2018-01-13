@@ -212,7 +212,7 @@ Also, **IP can lose packets due to routing loops or equipment failures**.
   - Internet checksum
 - Cyclic Redundancy Check (CRC)
 
-![](figures/crc.png)
+<img src="figures/crc.png" width="500px"/>
 
 $R = remainder \frac{D \cdot 2^r}{G}$
 
@@ -247,18 +247,41 @@ C’s adapter will process the frames, but the adapter will not pass the datagra
 
 If the LAN broadcast address is used, then C’s adapter will both process the frames and pass the datagrams up the protocol stack.
 
+**R11. Why is an ARP query sent within a broadcast frame? Why is an ARP response sent within a frame with a specific destination MAC address?**
 
+ An ARP query is sent in a broadcast frame because the querying host does not which adapter address corresponds to the IP address in question.
 
+ For the response, the sending node knows the adapter address to which the response should be sent, so there is no need to send a broadcast frame (which would have to be processed by all the other nodes on the LAN).
 
+**R12. For the network in Figure 6.19, the router has two ARP modules, each with its own ARP table. Is it possible that the same MAC address appears in both tables?**
 
+<img src="figures/2-subnets.png" width="500px"/>
 
+No it is not possible. Each LAN has its own distinct set of adapters attached to it, with each adapter having a unique LAN address.
 
+**R13. What is a hub used for?**
 
+A hub is a physical-layer device that acts on individual bits rather than frames. When a bit, representing a zero or a one, arrives from one interface, the hub simply re-creates the bit, boosts its energy strength, and transmits the bit onto all the other interfaces.
 
+## Section 7.3 WiFi: 802.11 Wireless LANs
 
+**R5. Describe the role of the beacon frames in 802.11.**
 
+APs transmit beacon frames. An AP’s beacon frames will be transmitted over one of the 11 channels. The beacon frames permit nearby wireless stations to discover and identify the AP.
 
+**R7. Why are acknowledgments used in 802.11 but not in wired Ethernet?**
 
+Because of the relatively high bit error rates of wireless channels.
+
+**What are the two main purposes of a CTS frame?**
+
+The **hidden station problem** is mitigated, since a long DATA frame is transmitted only after the channel has been reserved.
+
+**Shorter collision time**: Because the RTS and CTS frames are short, a collision involving an RTS or CTS frame will last only for the duration of the short RTS or CTS frame. Once the RTS and CTS frames are correctly transmitted, the following DATA and ACK frames should be transmitted without collisions.
+
+**R10. Suppose the IEEE 802.11 RTS and CTS frames were as long as the standard DATA and ACK frames. Would there be any advantage to using the CTS and RTS frames? Why or why not?**
+
+No, there wouldn’t be any advantage. Suppose there are two stations that want to transmit at the same time, and they both use RTS/CTS. If the RTS frame is as long as a DATA frames, the channel would be wasted for as long as it would have been wasted for two colliding DATA frames. Thus, the RTS/CTS exchange is only useful when the RTS/CTS frames are significantly smaller than the DATA frames.
 
 
 
