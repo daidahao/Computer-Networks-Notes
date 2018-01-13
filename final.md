@@ -2,7 +2,7 @@
 
 ## Cover Range
 - 3.5.5 - 6.4
-- 6.5 - 6.7
+- 6.6 - 6.7
 - 7.3.1 - 7.3.2
 
 ## Section 3.5 TCP
@@ -186,16 +186,66 @@ A **network management agent** is a process running in the managed device that c
 <img src="figures/network-management.png" width="500px"/>
 
 
+## Section 6.1 Intruduction to the Link Layer
+
+## Section 6.2 Error-Detection and -Correction Techniques
+
+**R1. What is framing in the link layer?**
+
+Almost all link-layer protocols encapsulate each network-layer datagram within a link-layer frame before transmission over the link.
+
+Header + data
+
+**R2. If all the links in the Internet were to provide reliable delivery service, would the TCP reliable delivery service be redundant? Why or why not?**
+
+Although each link guarantees that an IP datagram sent over the link will be received at the other end of the link without errors, it is not guaranteed that IP datagrams will arrive at the ultimate destination **in the proper order**. With IP, datagrams in the same TCP connection can take different routes in the network, and therefore arrive out of order.
+
+TCP is still needed to provide the receiving end of the application the byte stream **in the correct order**.
+
+Also, **IP can lose packets due to routing loops or equipment failures**.
 
 
+- Parity Checks
+  - One-bit even parity
+  - Two-dimensional even parity
+- Checksumming Methods
+  - Internet checksum
+- Cyclic Redundancy Check (CRC)
+
+![](figures/crc.png)
+
+$R = remainder \frac{D \cdot 2^r}{G}$
+
+$G_{CRC-32} = 100000100110000010001110110110111$
+
+## Section 6.3
+
+**R4. Suppose two nodes start to transmit at the same time a packet of length L over a broadcast channel of rate R. Denote the propagation delay between the two nodes as $d_{prop}$. Will there be a collision if $d_{prop} < L/R$? Why or why not?**
+
+There will be a collision in the sense that while a node is transmitting it will start to receive a packet from the other node.
+
+**R5. In Section 5.3, we listed four desirable characteristics of a broadcast channel. Which of these characteristics does slotted ALOHA have? Which of these characteristics does token passing have?**
+
+1. **When only one node has data to send, that node has a throughput of R bps.**
+2. **When M nodes have data to send, each of these nodes has a throughput of R/M bps.** This need not necessarily imply that each of the M nodes always has an instantaneous rate of R/M, but rather that each node should have an average transmission rate of R/M over some suitably defined interval
+of time.
+3. The protocol is **decentralized**; that is, there is no master node that represents a single point of failure for the network.
+4. The protocol is **simple**, so that it is inexpensive to implement.
 
 
+Slotted Aloha: 1, 2 and 4 (slotted ALOHA is only partially decentralized, since it requires the clocks in all nodes to be synchronized).
 
+Token ring: 1, 2, 3, 4.
 
+## Section 6.4
 
+**R10. Suppose nodes A, B, and C each attach to the same broadcast LAN (through their adapters). If A sends thousands of IP datagrams to B with each encapsulating frame addressed to the MAC address of B, will C’s adapter process these frames? If so, will C’s adapter pass the IP datagrams in these frames to the network layer C?**
 
+C’s adapter will process the frames, but the adapter will not pass the datagrams up the protocol stack.
 
+**How would your answers change if A sends frames with the MAC broadcast address?**
 
+If the LAN broadcast address is used, then C’s adapter will both process the frames and pass the datagrams up the protocol stack.
 
 
 
