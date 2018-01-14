@@ -68,7 +68,7 @@ With the shadow copy, the forwarding lookup is made locally, at each input port,
 
 **R11. What is the role of a packet scheduler at the output port of a router?**
 
-To determine the order in which quesed packets are transmitted over an outgoing link.
+To determine the order in which queued packets are transmitted over an outgoing link.
 
 **R12. What is a drop-tail policy? What are AQM algorithms? Which is the most widely studied and implemented AQM algorithm? How does it work?**
 
@@ -82,7 +82,7 @@ Random Early Detection (RED) algorithm.
 
 **R13. What is HOL blocking? Does it occur in inpur ports or output ports?**
 
-A queued in an input queue must wait for transfer throught the fabric because it is blocked by another packet at the head of the line.
+A queued in an input queue must wait for transfer through the fabric because it is blocked by another packet at the head of the line.
 
 HOL blocking occurs at the **input port**.
 
@@ -107,7 +107,7 @@ Weighted fair queuing (WFQ) differs from round robin (RR) in that each class may
   - Dropping
   - Modify-field
 
-  # Chapter 5 The Network Layer: Control Plane
+# Chapter 5 The Network Layer: Control Plane
 
 ## Section 5.2 Routing Algorithms
 
